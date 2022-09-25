@@ -19,11 +19,8 @@ const MIN = 0;
 const withBaseName = makePrefixer("uitkCircularProgress");
 
 export const SIZE_OPTIONS = {
-  small: {
-    container: 36,
-  },
-  medium: {
-    container: 48,
+  default: {
+    container: 40,
   },
   large: {
     container: 60,
@@ -70,7 +67,7 @@ export interface CircularProgressProps extends HTMLAttributes<HTMLDivElement> {
    * The size of the circle
    * (small, medium, large)
    */
-  size?: "small" | "medium" | "large";
+  size?: "default" | "large";
   /**
    * Default unit is`%`
    */
@@ -107,7 +104,7 @@ export const CircularProgress = forwardRef<
     className,
     disabled,
     showInfo = true,
-    size = "small",
+    size = "default",
     renderInfo,
     value = 0,
     unit = "%",
@@ -178,8 +175,7 @@ export const CircularProgress = forwardRef<
   return (
     <div
       className={classnames(className, "uitkCircularProgress", {
-        [withBaseName("small")]: size === "small",
-        [withBaseName("medium")]: size === "medium",
+        [withBaseName("default")]: size === "default",
         [withBaseName("large")]: size === "large",
         [withBaseName("disabled")]: disabled,
       })}
