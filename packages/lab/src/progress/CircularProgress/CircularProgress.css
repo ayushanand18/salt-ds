@@ -1,3 +1,39 @@
+.uitk-density-high {
+  --circularProgress-strokeWidth: 3px;
+  --circularProgress-strokeWidth-large: 5px;
+  --circularProgress-fontSize: 10px;
+  --circularProgress-fontSize-large: 12px;
+}
+
+.uitk-density-medium {
+  --circularProgress-strokeWidth: 4px;
+  --circularProgress-strokeWidth-large: 6px;
+  --circularProgress-fontSize: 11px;
+  --circularProgress-fontSize-large: 14px;
+}
+
+.uitk-density-low {
+  --circularProgress-strokeWidth: 5px;
+  --circularProgress-strokeWidth-large: 7px;
+  --circularProgress-fontSize: 12px;
+  --circularProgress-fontSize-large: 18px;
+}
+
+.uitk-density-touch {
+  --circularProgress-strokeWidth: 6px;
+  --circularProgress-strokeWidth-large: 8px;
+  --circularProgress-fontSize: 14px;
+  --circularProgress-fontSize-large: 24px;
+}
+
+.uitkCircularProgress-default {
+  font-size: var(--circularProgress-fontSize);
+}
+
+.uitkCircularProgress-large {
+  font-size: var(--circularProgress-fontSize-large);
+}
+
 .uitkCircularProgress {
   color: var(--uitk-text-primary-foreground);
   display: inline-flex;
@@ -12,19 +48,11 @@
 
 .uitkCircularProgress-circle {
   stroke: url("#uitk-circular-progress-gradient");
-  stroke-width: 2px;
+  stroke-width: var(--circularProgress-strokeWidth);
 }
 
-.uitkCircularProgress-small {
-  font-size: 11px;
-}
-
-.uitkCircularProgress-medium {
-  font-size: 14px;
-}
-
-.uitkCircularProgress-large {
-  font-size: 16px;
+.uitkCircularProgress-large .uitkCircularProgress-circle {
+  stroke-width: var(--circularProgress-strokeWidth-large);
 }
 
 .uitkCircularProgress-progressValue {
